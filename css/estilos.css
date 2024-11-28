@@ -1,0 +1,19 @@
+/*fonts*/
+
+/*Rubik estándar*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/*Rubik Mono One*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'Rubik One';
+        font-weight: normal;
+        font-style: normal;
+        src: url('../assets/fonts/rubik-one/rubik-one-regular.ttf') format('truetype');
+      }
+    }
