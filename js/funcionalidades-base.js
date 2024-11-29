@@ -1,8 +1,11 @@
+
+
 let desplegable = document.querySelector('#desplegable');
 let burguerMenu = document.querySelector('#burguer');
 let divsBurguer = document.querySelectorAll('#burguer div')
 let subdesplegable = document.querySelectorAll('.subdesplegable');
 let submenus = document.querySelectorAll('li ul');
+
 
 
 //despliega el menu
@@ -39,13 +42,28 @@ document.addEventListener('click', (event) => {
         setTimeout(() => {
             desplegable.classList.remove('bg-azulOscuro', 'bg-opacity-70');
         }, 350);
+        for(let i = 0; i < subdesplegable.length; i ++){
+            if(!submenus[i].classList.contains('hidden')){
+             submenus[i].classList.toggle('hidden');
+             subdesplegable[i].classList.toggle('rotate-45');
+             submenus[i].classList.toggle('opacity-0');
+             submenus[i].classList.toggle('opacity-100');
+            }
+        }
     }
 });
 
 //despliega los submenús
 for(let i = 0; i < subdesplegable.length; i ++){
     subdesplegable[i].addEventListener('click', () =>{
-       submenus[i].classList.toggle('hidden');
+        subdesplegable[i].classList.toggle('rotate-45')
+        setTimeout(() => {
+        submenus[i].classList.toggle('hidden');
+        },175)
+       setTimeout(() => {
+        submenus[i].classList.toggle('opacity-0');
+        submenus[i].classList.toggle('opacity-100');
+       },200)
     });
 }
 

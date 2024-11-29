@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/output-tail.css" rel="stylesheet">
+  <title>Ciudad Gata</title>
 </head>
 <body>
   <div>
@@ -28,7 +29,7 @@
             </li>
             <li class="w-3/4 lg:w-2/3 text-xl tracking-widest lg:text-3xl py-5 text-start font-rubikE font-normal">
               <a href="nuevo/index.html" target="_self">nuevos</a>
-              <button type="button" class="subdesplegable lg:ml-1 text-slate-300">+</button>
+              <button type="button" class="subdesplegable lg:ml-1 text-slate-300 transition-transform duration-1000">+</button>
               <ul class="hidden p-5">
                 <li class="py-2"><a href="nuevo/modelo-abarajame/index.html" target="_self">abarajame</a></li>
                 <li class="py-2"><a href="nuevo/modelo-tubanda/index.html" target="_self">tu banda</a></li>
@@ -36,15 +37,15 @@
             </li>
             <li class="w-3/4 lg:w-2/3 text-xl tracking-widest lg:text-3xl py-5 text-start font-rubikE font-normal">
               <a href="clasico/index.html" target="_self">clásicos</a>
-              <button type="button" class="subdesplegable lg:ml-1 text-slate-300">+</button>
-              <ul class="hidden p-5">
-                <li class="py-2"><a href="clasico/modelo-punkito.html" target="_self">punkito</a></li>
-                <li class="py-2"><a href="clasico/modelo-bocanada.html" target="_self">bocanada</a></li>
+              <button type="button" class="subdesplegable lg:ml-1 text-slate-300 transition-transform duration-1000">+</button>
+              <ul class="hidden opacity-0 transition duration-700 px-5 pt-4">
+                <li class="py-1"><a href="clasico/modelo-punkito.html" target="_self">punkito</a></li>
+                <li class="py-1"><a href="clasico/modelo-bocanada.html" target="_self">bocanada</a></li>
               </ul>
             </li>
             <li class="w-3/4 lg:w-2/3 text-xl tracking-widest lg:text-3xl py-4 text-start font-rubikE font-normal">
               <a href="informacion-compras/index.html" target="_self">info<br>importante</a>
-              <button type="button" class="subdesplegable lg:ml-1 text-slate-300">+</button>
+              <button type="button" class="subdesplegable lg:ml-1 text-slate-300 transition-transform duration-1000">+</button>
               <ul class=" hidden p-5">
                 <li class="py-2" ><a href="informacion-compras/talles.html" target="_self">talles</a></li>
                 <li class="py-2"><a href="informacion-compras/pagos-envios.html" target="_self">pagos, envíos</a></li>
@@ -58,24 +59,89 @@
     
     <main class="bg-beige flex flex-col items-center">  
         <section id="portada" class="w-full relative z-0 h-screen bg-black">
+          <div data-carousel='{ "loadingClasses": "opacity-0", "isAutoPlay": true, "speed": 5000 }' class="h-full w-full">
+            <div class="carousel rounded-none h-full">
+              <div class="carousel-body">
+                <!-- Slide 1 -->
+                <div class="carousel-slide h-full">
+                  <div class="flex h-full justify-center">
+                    <img src="assets/img/galeria/desktop/grupal.jpg" class="size-full object-cover" alt="Ciudad gata en grupo" />
+                  </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-slide h-full">
+                  <div class="flex h-full justify-center">
+                    <img src="assets/img/galeria/desktop/calle-byn.png" class="size-full object-cover" alt="Ciudad gata en blanco y negro" />
+                  </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-slide h-full">
+                  <div class="flex h-full justify-center">
+                    <img src="assets/img/galeria/desktop/ny-ramones.jpeg" class="size-full object-cover" alt="Ciudad gata en Nuevo York" />
+                  </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="carousel-slide h-full">
+                  <div class="flex h-full justify-center">
+                    <img src="assets/img/galeria/desktop/cero-drama.jpeg" class="size-full object-cover" alt="Ciudad Gata sin drama" />
+                  </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="carousel-slide h-full">
+                  <div class="flex h-full justify-center">
+                    <img src="assets/img/galeria/desktop/birra.jpeg" class="size-full object-cover" alt="Ciudad gata en un bar" />
+                  </div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="carousel-slide h-full">
+                  <div class="flex h-full justify-center">
+                    <img src="assets/img/galeria/desktop/discos.jpeg" class="size-full object-cover" alt="Ciudad gata en una disquería" />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-pagination">
+                <span class="carousel-dot  carousel-active:bg-beige "></span>
+                <span class="carousel-dot  carousel-active:bg-beige"></span>
+                <span class="carousel-dot  carousel-active:bg-beige"></span>
+                <span class="carousel-dot  carousel-active:bg-beige"></span>
+                <span class="carousel-dot  carousel-active:bg-beige"></span>
+                <span class="carousel-dot  carousel-active:bg-beige"></span>
+              </div>
+            </div>
+            <button type="button" class="carousel-prev h-8 self-center"> 
+              <span class="size-8  flex items-center justify-center bg-beige rounded-full shadow">
+                <span class="icon-[tabler--chevron-left] size-5 cursor-pointer  bg-azulOscuro rtl:rotate-180"></span>
+              </span>
+              <span class="sr-only">Anterior</span>
+            </button>
+            <!-- slide siguiente -->
+            <button type="button" class="carousel-next h-8 self-center ">
+              <span class="sr-only">Siguiente</span>
+              <span class="size-8 flex items-center justify-center bg-beige rounded-full shadow">
+                <span class="icon-[tabler--chevron-right] size-5 cursor-pointer bg-azulOscuro rtl:rotate-180"></span>
+              </span>
+            </button>
+          </div>
         </section>
         <h1 class="uppercase text-azulOscuro font-rubikO ">remeras con onda,remeras gatas</h1>   
     <section>
         
     </section>
     </main>
-    <footer class="z-10 w-full flex flex-col items-center justify-center lg:flex-row lg:justify-around py-4 bg-azulOscuro bg-opacity-80 text-center text-beige">
-        <img class="w-1/3 py-4" src="assets/img/logo-125.png" alt="logo">
-        <section class="flex justify-between w-1/3 py-4">
-         <a href="#" target="_blank"><img src="assets/img/tik-tok.png" alt="tik-tok"></a>
-         <a href="#" target="_blank"><img src="assets/img/instagram.png" alt="instagram"></a>
+    <footer class="z-10 w-full h-96 flex flex-col items-center justify-between lg:h-full lg:flex-row lg:justify-around py-4 bg-azulOscuro bg-opacity-80 text-center text-beige">
+        <div class="w-1/3 flex justify-center lg:items-end lg:h-60 lg:order-2"><img src="assets/img/logo-125.png" alt="logo"></div>
+        <section class="flex justify-aroundd box-border w-1/3 py-4 px-2 lg:h-60 lg:items-start lg:py-10 lg:justify-center ">
+         <div class="lg:h-1/4 lg:w-1/4 xl:w-1/6 xl:h-1/6" ><a href="#" target="_blank"><img class="lg:w-10/12"  src="assets/img/tik-tok.png" alt="tik-tok"></a></div>
+         <div class="lg:h-1/4 lg:w-1/4 xl:w-1/6 xl:h-1/6" ><a href="#" target="_blank"><img class="lg:w-10/12" src="assets/img/instagram.png" alt="instagram"></a></div>
         </section>
-        <section class="font-rubikO w-1/2 lg:w-1/3 py-4">
+        <section class="font-rubikO w-1/2 py-4 lg:w-1/3 lg:flex lg:h-60 lg:flex-col lg:justify-start-start lg:order-3  lg:py-10">
             <h4 class="uppercase text-3xl"><a href="contacto.html" target="_self">contacto</a></h4>
             <h4 class="capitalize text-xl pt-2"><a href="desarrollo-sitio.html" target="_self">sobre el sitio</a></h4>
         </section>
       </footer>
   </div>
  <script src="js/funcionalidades-base.js"></script>
+ <script src="node_modules/flyonui/dist/js/carousel.js"></script> 
+ 
 </body>
 </html>

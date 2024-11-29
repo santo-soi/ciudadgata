@@ -7,7 +7,10 @@ module.exports = {
     'clientes.html',
     'index.html',
     'juego.html',
-    'js/*.js'
+    'contacto.html',
+    'desarrollo-sitio.html',
+    'js/*.js',
+    'node_modules/flyonui/dist/js/carousel.js'
   ],
   theme: {
     fontFamily: {
@@ -27,6 +30,9 @@ module.exports = {
       
     },
   },
-  plugins: [],
+  plugins: [
+    require("flyonui"),
+    require("flyonui/plugin")
+  ]
 }
 
