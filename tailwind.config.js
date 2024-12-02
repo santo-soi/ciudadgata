@@ -3,7 +3,7 @@ module.exports = {
   content: ['clasico/**/*.{html,js}',
     'informacion-compras/**/*.{html,js}',
     'nuevo/**/*.{html,js}',
-    'about-ciudadgata',
+    'about-ciudadgata.html',
     'clientes.html',
     'index.html',
     'juego.html',
