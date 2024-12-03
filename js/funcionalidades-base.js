@@ -6,7 +6,12 @@ let divsBurguer = document.querySelectorAll('#burguer div')
 let subdesplegable = document.querySelectorAll('.subdesplegable');
 let submenus = document.querySelectorAll('li ul');
 
+let links = document.querySelectorAll('#desplegable a');
 
+// Itera por cada enlace y añade la clase 'hover:underline'
+links.forEach(link => {
+  link.classList.add('hover:underline');
+});
 
 //despliega el menu
 burguerMenu.addEventListener('click', () =>{
@@ -22,12 +27,12 @@ burguerMenu.addEventListener('click', () =>{
         divsBurguer[1].classList.remove('bg-opacity-0');
         divsBurguer[2].classList.remove('-rotate-45', '-translate-y-3');
         }
-       console.log('clickeó');
+       
 });
 
 //guarda el menú con clickeand por fuera del desplegable
 document.addEventListener('click', (event) => {
-    console.log('clickeó afuera');
+   
     if (
         !desplegable.classList.contains('-translate-x-full') && 
         !burguerMenu.contains(event.target) &&
@@ -52,14 +57,14 @@ document.addEventListener('click', (event) => {
 //despliega los submenús
 for(let i = 0; i < subdesplegable.length; i ++){
     subdesplegable[i].addEventListener('click', () =>{
-        subdesplegable[i].classList.toggle('rotate-45')
+        subdesplegable[i].classList.toggle('rotate-45');
         setTimeout(() => {
         submenus[i].classList.toggle('hidden');
-        },175)
+        },175);
        setTimeout(() => {
         submenus[i].classList.toggle('opacity-0');
         submenus[i].classList.toggle('opacity-100');
-       },200)
+       },200);
     });
 }
 

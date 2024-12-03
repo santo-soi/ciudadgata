@@ -10,7 +10,9 @@ module.exports = {
     'contacto.html',
     'desarrollo-sitio.html',
     'js/*.js',
-    'node_modules/flyonui/dist/js/carousel.js'
+    'node_modules/flyonui/dist/js/carousel.js',
+    'node_modules/flyonui/dist/js/flyonui.js'
+    
   ],
   theme: {
     fontFamily: {
