@@ -1537,6 +1537,10 @@ textarea:focus-visible{
   top: 2rem;
 }
 
+.left-8{
+  left: 2rem;
+}
+
 .z-0{
   z-index: 0;
 }
@@ -1557,9 +1561,18 @@ textarea:focus-visible{
   margin: 1.25rem;
 }
 
+.m-3{
+  margin: 0.75rem;
+}
+
 .mx-10{
   margin-left: 2.5rem;
   margin-right: 2.5rem;
+}
+
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .my-1{
@@ -1595,11 +1608,6 @@ textarea:focus-visible{
 .my-auto{
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.my-2{
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
 .mb-16{
@@ -1661,6 +1669,11 @@ textarea:focus-visible{
   height: 100%;
 }
 
+.size-10\/12{
+  width: 83.333333%;
+  height: 83.333333%;
+}
+
 .h-1\/4{
   height: 25%;
 }
@@ -1697,22 +1710,6 @@ textarea:focus-visible{
   height: 100vh;
 }
 
-.h-\[50rem\]{
-  height: 50rem;
-}
-
-.h-\[40rem\]{
-  height: 40rem;
-}
-
-.h-\[35rem\]{
-  height: 35rem;
-}
-
-.h-\[30rem\]{
-  height: 30rem;
-}
-
 .max-h-36{
   max-height: 9rem;
 }
@@ -1739,14 +1736,6 @@ textarea:focus-visible{
 
 .w-full{
   width: 100%;
-}
-
-.w-10\/12{
-  width: 83.333333%;
-}
-
-.w-11\/12{
-  width: 91.666667%;
 }
 
 .grow{
@@ -1788,6 +1777,10 @@ textarea:focus-visible{
 
 .resize{
   resize: both;
+}
+
+.list-decimal{
+  list-style-type: decimal;
 }
 
 .flex-col{
@@ -1949,6 +1942,10 @@ textarea:focus-visible{
   padding: 1.25rem;
 }
 
+.p-8{
+  padding: 2rem;
+}
+
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -2098,6 +2095,11 @@ textarea:focus-visible{
   color: rgb(245 245 220 / var(--tw-text-opacity, 1));
 }
 
+.text-blue-600{
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
+}
+
 .text-red-600{
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity, 1));
@@ -2111,11 +2113,6 @@ textarea:focus-visible{
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.text-blue-600{
-  --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
 }
 
 .opacity-0{
@@ -2251,6 +2248,11 @@ textarea:focus-visible{
     margin-right: auto;
   }
 
+  .lg\:my-0{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
   .lg\:my-10{
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
@@ -2281,6 +2283,10 @@ textarea:focus-visible{
     margin-bottom: 1.25rem;
   }
 
+  .lg\:mb-8{
+    margin-bottom: 2rem;
+  }
+
   .lg\:ml-1{
     margin-left: 0.25rem;
   }
@@ -2295,26 +2301,6 @@ textarea:focus-visible{
 
   .lg\:mt-20{
     margin-top: 5rem;
-  }
-
-  .lg\:mb-80{
-    margin-bottom: 20rem;
-  }
-
-  .lg\:mb-28{
-    margin-bottom: 7rem;
-  }
-
-  .lg\:mb-36{
-    margin-bottom: 9rem;
-  }
-
-  .lg\:mb-16{
-    margin-bottom: 4rem;
-  }
-
-  .lg\:mb-8{
-    margin-bottom: 2rem;
   }
 
   .lg\:block{
@@ -2376,18 +2362,6 @@ textarea:focus-visible{
 
   .lg\:h-full{
     height: 100%;
-  }
-
-  .lg\:h-\[40rem\]{
-    height: 40rem;
-  }
-
-  .lg\:h-\[30rem\]{
-    height: 30rem;
-  }
-
-  .lg\:h-\[42rem\]{
-    height: 42rem;
   }
 
   .lg\:w-1\/2{
@@ -2514,11 +2488,6 @@ textarea:focus-visible{
     padding-bottom: 0.5rem;
   }
 
-  .lg\:px-32{
-    padding-left: 8rem;
-    padding-right: 8rem;
-  }
-
   .lg\:pb-20{
     padding-bottom: 5rem;
   }
@@ -2549,6 +2518,11 @@ textarea:focus-visible{
   .lg\:text-6xl{
     font-size: 3.75rem;
     line-height: 1;
+  }
+
+  .lg\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.625rem;
   }
 }
 
