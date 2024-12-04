@@ -1513,6 +1513,10 @@ textarea:focus-visible{
   inset: 1rem;
 }
 
+.bottom-0{
+  bottom: 0px;
+}
+
 .left-4{
   left: 1rem;
 }
@@ -1531,10 +1535,6 @@ textarea:focus-visible{
 
 .top-8{
   top: 2rem;
-}
-
-.bottom-0{
-  bottom: 0px;
 }
 
 .z-0{
@@ -1592,49 +1592,14 @@ textarea:focus-visible{
   margin-bottom: 1.25rem;
 }
 
-.my-2{
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.my-3{
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
-.my-4{
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.my-6{
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
 .my-auto{
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.mx-2{
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.mx-4{
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-.mx-5{
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
-}
-
-.mx-auto{
-  margin-left: auto;
-  margin-right: auto;
+.my-2{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .mb-16{
@@ -1645,6 +1610,10 @@ textarea:focus-visible{
   margin-bottom: 5rem;
 }
 
+.mr-2{
+  margin-right: 0.5rem;
+}
+
 .mt-16{
   margin-top: 4rem;
 }
@@ -1653,12 +1622,8 @@ textarea:focus-visible{
   margin-top: 5rem;
 }
 
-.mb-15{
-  margin-bottom: 3.75rem;
-}
-
-.mr-2{
-  margin-right: 0.5rem;
+.mt-4{
+  margin-top: 1rem;
 }
 
 .box-border{
@@ -1696,23 +1661,24 @@ textarea:focus-visible{
   height: 100%;
 }
 
-.size-1\/2{
-  width: 50%;
-  height: 50%;
-}
-
-.size-1\/3{
-  width: 33.333333%;
-  height: 33.333333%;
-}
-
-.size-1\/4{
-  width: 25%;
+.h-1\/4{
   height: 25%;
+}
+
+.h-10{
+  height: 2.5rem;
 }
 
 .h-16{
   height: 4rem;
+}
+
+.h-6{
+  height: 1.5rem;
+}
+
+.h-8{
+  height: 2rem;
 }
 
 .h-96{
@@ -1731,32 +1697,20 @@ textarea:focus-visible{
   height: 100vh;
 }
 
-.h-1\/4{
-  height: 25%;
+.h-\[50rem\]{
+  height: 50rem;
 }
 
-.h-3\/4{
-  height: 75%;
+.h-\[40rem\]{
+  height: 40rem;
 }
 
-.h-10{
-  height: 2.5rem;
+.h-\[35rem\]{
+  height: 35rem;
 }
 
-.h-20{
-  height: 5rem;
-}
-
-.h-80{
-  height: 20rem;
-}
-
-.h-8{
-  height: 2rem;
-}
-
-.h-6{
-  height: 1.5rem;
+.h-\[30rem\]{
+  height: 30rem;
 }
 
 .max-h-36{
@@ -1775,6 +1729,10 @@ textarea:focus-visible{
   width: 75%;
 }
 
+.w-6{
+  width: 1.5rem;
+}
+
 .w-9{
   width: 2.25rem;
 }
@@ -1783,12 +1741,12 @@ textarea:focus-visible{
   width: 100%;
 }
 
-.w-1\/4{
-  width: 25%;
+.w-10\/12{
+  width: 83.333333%;
 }
 
-.w-6{
-  width: 1.5rem;
+.w-11\/12{
+  width: 91.666667%;
 }
 
 .grow{
@@ -1848,10 +1806,6 @@ textarea:focus-visible{
   align-items: center;
 }
 
-.items-stretch{
-  align-items: stretch;
-}
-
 .justify-start{
   justify-content: flex-start;
 }
@@ -1902,12 +1856,12 @@ textarea:focus-visible{
   border-radius: 0.125rem;
 }
 
-.border-4{
-  border-width: 4px;
-}
-
 .border-2{
   border-width: 2px;
+}
+
+.border-4{
+  border-width: 4px;
 }
 
 .border-azulOscuro{
@@ -1920,6 +1874,11 @@ textarea:focus-visible{
   background-color: rgb(1 30 64 / var(--tw-bg-opacity, 1));
 }
 
+.bg-base-100{
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity, 1)));
+}
+
 .bg-beige{
   --tw-bg-opacity: 1;
   background-color: rgb(245 245 220 / var(--tw-bg-opacity, 1));
@@ -1930,9 +1889,9 @@ textarea:focus-visible{
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
 }
 
-.bg-base-100{
+.bg-green-500{
   --tw-bg-opacity: 1;
-  background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity, 1)));
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
 }
 
 .bg-red-600{
@@ -1943,11 +1902,6 @@ textarea:focus-visible{
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.bg-green-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-0{
@@ -2000,6 +1954,11 @@ textarea:focus-visible{
   padding-right: 0.5rem;
 }
 
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -2033,11 +1992,6 @@ textarea:focus-visible{
 .py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.px-4{
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .pl-6{
@@ -2159,6 +2113,11 @@ textarea:focus-visible{
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.text-blue-600{
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
+}
+
 .opacity-0{
   opacity: 0;
 }
@@ -2167,12 +2126,12 @@ textarea:focus-visible{
   opacity: 1;
 }
 
-.opacity-90{
-  opacity: 0.9;
-}
-
 .opacity-30{
   opacity: 0.3;
+}
+
+.opacity-90{
+  opacity: 0.9;
 }
 
 .shadow{
@@ -2306,6 +2265,14 @@ textarea:focus-visible{
     margin-bottom: 0px;
   }
 
+  .lg\:mb-10{
+    margin-bottom: 2.5rem;
+  }
+
+  .lg\:mb-15{
+    margin-bottom: 3.75rem;
+  }
+
   .lg\:mb-20{
     margin-bottom: 5rem;
   }
@@ -2330,12 +2297,24 @@ textarea:focus-visible{
     margin-top: 5rem;
   }
 
-  .lg\:mb-15{
-    margin-bottom: 3.75rem;
+  .lg\:mb-80{
+    margin-bottom: 20rem;
   }
 
-  .lg\:mb-10{
-    margin-bottom: 2.5rem;
+  .lg\:mb-28{
+    margin-bottom: 7rem;
+  }
+
+  .lg\:mb-36{
+    margin-bottom: 9rem;
+  }
+
+  .lg\:mb-16{
+    margin-bottom: 4rem;
+  }
+
+  .lg\:mb-8{
+    margin-bottom: 2rem;
   }
 
   .lg\:block{
@@ -2361,6 +2340,10 @@ textarea:focus-visible{
 
   .lg\:h-1\/4{
     height: 25%;
+  }
+
+  .lg\:h-3\/4{
+    height: 75%;
   }
 
   .lg\:h-60{
@@ -2395,12 +2378,16 @@ textarea:focus-visible{
     height: 100%;
   }
 
-  .lg\:h-3\/4{
-    height: 75%;
-  }
-
   .lg\:h-\[40rem\]{
     height: 40rem;
+  }
+
+  .lg\:h-\[30rem\]{
+    height: 30rem;
+  }
+
+  .lg\:h-\[42rem\]{
+    height: 42rem;
   }
 
   .lg\:w-1\/2{
@@ -2485,9 +2472,8 @@ textarea:focus-visible{
        object-fit: cover;
   }
 
-  .lg\:object-fill{
-    -o-object-fit: fill;
-       object-fit: fill;
+  .lg\:p-10{
+    padding: 2.5rem;
   }
 
   .lg\:p-5{
@@ -2498,22 +2484,24 @@ textarea:focus-visible{
     padding: 2rem;
   }
 
-  .lg\:p-10{
-    padding: 2.5rem;
-  }
-
-  .lg\:p-20{
-    padding: 5rem;
-  }
-
   .lg\:px-10{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
 
+  .lg\:px-20{
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
   .lg\:px-28{
     padding-left: 7rem;
     padding-right: 7rem;
+  }
+
+  .lg\:py-0{
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .lg\:py-10{
@@ -2526,14 +2514,9 @@ textarea:focus-visible{
     padding-bottom: 0.5rem;
   }
 
-  .lg\:px-20{
-    padding-left: 5rem;
-    padding-right: 5rem;
-  }
-
-  .lg\:py-0{
-    padding-top: 0px;
-    padding-bottom: 0px;
+  .lg\:px-32{
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
 
   .lg\:pb-20{
