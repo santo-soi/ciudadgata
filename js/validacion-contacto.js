@@ -1,33 +1,92 @@
+// Elementos del dom capturados
 const campos = document.querySelectorAll(".form-control");
 const botonEnvio = document.querySelector("#enviar");
-const patronNombre = /^[a-zA-Z]{3,}(?:\s[a-zA-Z]{3,})+$/;
-const patronEmail = /^(?=.{1,})(?=.{3,}@)(?=.{2,}\..{2,})[^\s@]+@[^\s@]+\.[a-zA-Z]{3,}$/;
-const patronMensaje = /^(?=.*[a-zA-Z])(?=.*\s).{20,200}$/;
 
-botonEnvio.addEventListener('click', (e) => {
+// Expresiones regulares
+const patronNombre = /^[a-zA-Z]{3,}(?:\s[a-zA-Z]{3,})+$/;
+const patronEmail =  /^[a-zA-Z0-9]+([._%+-][a-zA-Z0-9]+)*@(gmail|yahoo|outlook|hotmail|icloud)\.(com|net|org)(\.[a-zA-Z]{2,10})?$/;
+const patronTelefono = /^11\d{8}$/;
+const patronMensaje = /^(?=.*[aeiou])(?=.*[bcdfghjklmnpqrstvwxyz])[a-zA-Z0-9\s\?\.,;!¡¿]{40,200}$/;
+;
+
+botonEnvio.addEventListener('click', function(e) {
     e.preventDefault();
     let comunicado = validaForm();
     if (comunicado) {
         console.log(`El usuario "${comunicado.nombre}", con correo electrónico "${comunicado.correo}", envío el siguiente mensaje: "${comunicado.mensaje}"`);
+        // Limpiar los mensajes de éxito y error
+        campos.forEach((campo) => {
+            campo.querySelector(".validado").classList.add("hidden");
+            const input = campo.querySelector("input") || campo.querySelector("textarea");
+            if (input) input.value = "";
+        });
     } 
-
-    // Limpiar los mensajes de éxito y error
-    for (let i = 0; i < campos.length; i++) {
-        const successMessage = campos[i].querySelector(".success-message");
-        const errorMessage = campos[i].querySelector(".error-message");
-        errorMessage.style.display = "none"; 
-        successMessage.style.display = "none";
-    }
+    
 });
 
 // Función para validar el formulario
 function validaForm() {
     let esValido = true; // Inicialmente se asume que es válido
+    let comunicado = {}; // Objeto para recopilar datos válidos
+
+    campos.forEach((campo, index) => {                                                  //recorre el array con método foreach()
+
+        //busca capturar el input, y de no tenerlo, el text-area, dentro del contenedor
+        const input = campo.querySelector("input") || campo.querySelector("textarea");  
+
+        //Captura los contenedores con mensajes de validación
+        const mensajePositivo = campo.querySelector(".validado");                 
+        const mensajeError = campo.querySelector(".error");
+    
+        if (input) {                                /*Una vez capturado el campo de datos evalua s/ el órden del html el tipo de campo,
+                                                     y aplica su regexp correspondiente*/
+            let regex = null;
+            
+            switch (index) {
+                case 0: regex = patronNombre; break;
+                case 1: regex = patronEmail; break;
+                case 2: regex = patronTelefono; break;
+                case 3: regex = patronMensaje; break;
+            }
+            
+            //Si no se cumple la regexp muestra mensaje de error y termina retorna false, si no muestra mensaje correcto.
+            if (!regex || !regex.test(input.value)) {
+                mensajeError.classList.remove("hidden");
+                mensajePositivo.classList.add("hidden");
+                esValido = false;
+            } else {
+                mensajeError.classList.add("hidden");
+                mensajePositivo.classList.remove("hidden");
+                // Guarda los datos válidos en comunicado
+                switch (index) {
+                    case 0: comunicado.nombre = input.value; break;
+                    case 1: comunicado.correo = input.value; break;
+                    case 2: comunicado.telefono = input.value; break;
+                    case 3: comunicado.mensaje = input.value; break;
+                }
+            }
+    
+        } 
+        
+    });
+
+    if (esValido) {
+        return comunicado; // Si es válido, retorna el objeto comunicado
+    } else {
+        return false; // Si no es válido, retorna false
+    }; 
+    
+      
+}
+
+
+/* 
     for (let i = 0; i < campos.length; i++) {
         const input = campos[i].querySelector("input, textarea");
-        const successMessage = campos[i].querySelector(".success-message");
-        const errorMessage = campos[i].querySelector(".error-message");
-
+        const successMessage = campos[i].querySelector(".validado");
+        const errorMessage = campos[i].querySelector(".error");
+        console.log(input)
+        console.log(successMessage, errorMessage)
         switch (i) {
             case 0:
                 if (!patronNombre.test(input.value)) {
@@ -50,6 +109,16 @@ function validaForm() {
                 }
                 break;
             case 2:
+                if (!patronTelefono.test(input.value)) {
+                    errorMessage.style.display = "block"; 
+                    successMessage.style.display = "none";
+                    esValido = false; // Hay un error
+                } else {
+                    successMessage.style.display = "block"; 
+                    errorMessage.style.display = "none";
+                }
+                break;
+            case 3:
                 if (!patronMensaje.test(input.value)) {
                     errorMessage.style.display = "block"; 
                     successMessage.style.display = "none";
@@ -60,22 +129,4 @@ function validaForm() {
                 }
                 break;
         }
-    }
-
-    // Si es válido, se prepara el comunicado
-    if (esValido) {
-        const inputs = document.querySelectorAll('input');
-        const textarea = document.querySelector('textarea');
-        let comunicado = {
-            nombre: inputs[0].value,
-            correo: inputs[1].value,
-            mensaje: textarea.value
-        }
-        inputs[0].value = '';
-        inputs[1].value = '';
-        textarea.value = '';
-        return comunicado; 
-    } else {
-        return false; // Si no es válido
-    }
-}
+    } */

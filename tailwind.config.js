@@ -11,7 +11,8 @@ module.exports = {
     'desarrollo-sitio.html',
     'js/*.js',
     'node_modules/flyonui/dist/js/carousel.js',
-    'node_modules/flyonui/dist/js/flyonui.js'
+    'node_modules/flyonui/dist/js/flyonui.js',
+    'node_modules/flyonui/flyonui.js'
     
   ],
   theme: {
