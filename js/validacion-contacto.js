@@ -6,19 +6,39 @@ const botonEnvio = document.querySelector("#enviar");
 const patronNombre = /^[a-zA-Z]{3,}(?:\s[a-zA-Z]{3,})+$/;
 const patronEmail =  /^[a-zA-Z0-9]+([._%+-][a-zA-Z0-9]+)*@(gmail|yahoo|outlook|hotmail|icloud)\.(com|net|org)(\.[a-zA-Z]{2,10})?$/;
 const patronTelefono = /^11\d{8}$/;
-const patronMensaje = /^(?=.*[aeiou])(?=.*[bcdfghjklmnpqrstvwxyz])[a-zA-Z0-9\s\?\.,;!¡¿]{40,200}$/;
-;
+const patronMensaje = /^(?=.*[aeiouáéíóú])(?=.*[bcdfghjklmnpqrstvwxyzñ])[a-zA-Z0-9áéíóúñ\s\?\.,;!¡¿'"\-]{40,300}$/;
+
 
 botonEnvio.addEventListener('click', function(e) {
     e.preventDefault();
     let comunicado = validaForm();
     if (comunicado) {
         console.log(`El usuario "${comunicado.nombre}", con correo electrónico "${comunicado.correo}", envío el siguiente mensaje: "${comunicado.mensaje}"`);
-        // Limpiar los mensajes de éxito y error
-        campos.forEach((campo) => {
-            campo.querySelector(".validado").classList.add("hidden");
-            const input = campo.querySelector("input") || campo.querySelector("textarea");
-            if (input) input.value = "";
+       
+        // Referencia al formulario
+        const form = document.querySelector("#contacto");
+        
+        // Crear objeto FormData con los datos del formulario
+        const formData = new FormData(form);
+
+        // Enviar los datos a Netlify Forms
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString(),
+        })
+        .then(() => {
+            alert("Formulario enviado con éxito");
+            // Limpiar campos después del envío
+            form.reset();
+            campos.forEach(campo => {
+                campo.querySelector(".validado").classList.add("hidden");
+                campo.querySelector(".error").classList.add("hidden");
+            });
+        })
+        .catch(error => {
+            console.error("Error al enviar formulario:", error);
+            alert("Hubo un error al enviar el formulario.");
         });
     } 
     

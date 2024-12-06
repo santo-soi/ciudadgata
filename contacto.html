@@ -87,11 +87,11 @@
           <div class=" w-full  shadow font-rubikE my-10 lg:w-3/4">
             <h5 class="text-2xl rounded-t-lg p-4 uppercase  text-azulOscuro font-bold ">Te leemos, gatx</h5>
             <div class="p-4">
-              <form action="#" method="post" class="needs-validation flex flex-col items-center" novalidate>
+              <form action="/" id="contacto" name="contacto" method="post" class="needs-validation flex flex-col items-center" data-netlify="true" novalidate>
                 <!-- Account Details -->
                 
                   <label class="form-control my-5 lg:w-1/2">                    
-                      <input type="text" placeholder="Nombre y apellido" class="input rounded-none border-2 border-azulOscuro text-azulOscuro placeholder-azulOscuro placeholder-opacity-70" required />
+                      <input type="text" name="nombre" id="nombre" placeholder="Nombre y apellido" class="input rounded-none border-2 border-azulOscuro text-azulOscuro placeholder-azulOscuro placeholder-opacity-70" required />
                       <span class="error hidden">Por favor, ingresa un nombre completo real.</span>
                       <span class="validado hidden">Perfecto!</span>
                   </label>
@@ -99,7 +99,7 @@
                 <!-- Email y teléfono -->
                 
                   <label class="form-control my-5 lg:w-1/2">
-                    <input type="email" class="input rounded-none border-2 border-azulOscuro text-azulOscuro placeholder-azulOscuro placeholder-opacity-70 active:border-opacity-70" placeholder="Correo electrónico"
+                    <input type="email" name="email" id="email" class="input rounded-none border-2 border-azulOscuro text-azulOscuro placeholder-azulOscuro placeholder-opacity-70 active:border-opacity-70" placeholder="Correo electrónico"
                       required="" />
                     <span class="error hidden">Por favor, ingresa un e-mail que sea valido.</span>
                     <span class="validado hidden">Perfecto!</span>
@@ -107,7 +107,7 @@
                
                 
                   <label class="form-control my-5 lg:w-1/2">                   
-                    <input type="number" class="input rounded-none border-2 border-azulOscuro text-azulOscuro placeholder-azulOscuro placeholder-opacity-70" placeholder="Teléfono celular" maxlength="10" required="" />
+                    <input type="tel" name="telefono" id="telefono" class="input rounded-none border-2 border-azulOscuro text-azulOscuro placeholder-azulOscuro placeholder-opacity-70" placeholder="Teléfono celular" maxlength="10" required="" />
                     <span class="error hidden">Por favor, ingresa un número completo (y real) desde el 11.</span>
                     <span class="validado hidden">Perfecto!</span>
                   </label>
@@ -115,7 +115,7 @@
                 <!-- Mensaje -->
 
                 <label class="form-control my-5 lg:w-1/2">  
-                  <textarea class="textarea h-72 resize-none rounded-none bg-white border-2 border-azulOscuro text-azulOscuro placeholder-azulOscuro placeholder-opacity-70" placeholder="Tu consulta" maxlength="200" required=""></textarea>
+                  <textarea id="mensaje" name="mensaje" class="textarea h-72 resize-none rounded-none bg-white border-2 border-azulOscuro text-azulOscuro placeholder-azulOscuro placeholder-opacity-70" placeholder="Tu consulta" maxlength="200" required=""></textarea>
                   <span class="error hidden">Por favor, escribí un mensaje pertinente y sin números</span>
                   <span class="validado hidden">Perfecto!</span>
                 </label>

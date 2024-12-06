@@ -817,6 +817,18 @@ html{
   color: var(--fallback-bc,oklch(var(--bc)/0.9));
 }
 
+.alert{
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  border-radius: var(--rounded-box, 0.5rem);
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity)));
+  color: var(--fallback-bc,oklch(var(--bc)/0.8));
+}
+
 .avatar.placeholder > div{
   display: flex;
   align-items: center;
@@ -2246,6 +2258,20 @@ select.is-invalid + .advance-select-toggle:focus,
   100%{
     transform: scale(1);
   }
+}
+
+.card .alert{
+  border-radius: 0px;
+}
+
+.card .alert:first-child{
+  border-top-left-radius: var(--rounded-box, 0.5rem);
+  border-top-right-radius: var(--rounded-box, 0.5rem);
+}
+
+.card .alert:last-child{
+  border-bottom-right-radius: var(--rounded-box, 0.5rem);
+  border-bottom-left-radius: var(--rounded-box, 0.5rem);
 }
 
 .carousel-prev:hover,
