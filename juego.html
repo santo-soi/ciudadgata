@@ -61,7 +61,7 @@
         <h1 id="titulo" class="text-4xl text-center uppercase font-rubikO font-bold my-10 lg:text-6xl">Jugar como un Gato</h1>
         
         <!-- Estado inicial -->
-        <section id="intro" class="w-full font-rubikE text-center my-10 p-6 bg-beige border-2 border-azulOscuro rounded shadow-lg lg:w-3/4 hidden">
+        <section id="intro" class="w-full font-rubikE text-center my-10 p-6 bg-beige border-2 border-azulOscuro rounded shadow-lg lg:w-3/4 ">
           <p class="text-xl font-medium mb-4">
             ¿Estás listo para poner a prueba cuánto sabés de <span class="font-bold">Ciudad Gata</span>?<br><br>
              Nuestras remeras no solo son un ícono del rock y el arte urbano, sino también un desafío. <br><br>
@@ -93,8 +93,8 @@
         </section>
         
         <!-- Juego -->
-        <section id="juego" class="w-full box-border flex flex-wrap justify-between my-10">
-          <p id="frasemobile" class="w-full p-2 text-2xl text-center font-medium italic lg:hidden">Frase inicial o generada</p>
+        <section id="juego" class="w-full box-border hidden flex-wrap justify-between my-10">
+          <p id="frasemobile" class="frase w-full p-2 text-2xl text-center font-medium italic lg:hidden">Frase inicial o generada</p>
           <!-- Botón para reiniciar el juego -->
           <button
             id="btn-reiniciar"
@@ -104,7 +104,7 @@
     
           <!-- Bloque de la frase y contadores en mobile-->
           <div id="bloque-frase" class="w-full text-center bg-beige border-2 border-azulOscuro p-4 rounded shadow-lg font-rubikE lg:border-0">
-            <p id="frase" class="hidden text-2xl lg:text-3xl font-medium italic lg:inline-block">Frase inicial o generada</p>
+            <p id="frasedesktop" class="frase hidden text-2xl lg:text-3xl font-medium italic lg:inline-block">Frase inicial o generada</p>
             <div class="modelo flex text-center mb-4 lg:hidden">
               <h3 class="text-xl font-bold mb-2">Encontrá el modelo:</h3>
               <p id="modelo-texto" class="text-lg font-medium">Texto o imagen del modelo</p>
@@ -122,8 +122,8 @@
               <!-- Aquí se generarán las cartas dinámicamente con JavaScript -->
                <!--1-->
               <div class="h-40 bg-azulOscuro rounded flex items-center justify-center shadow-inner lg:h-64 lg:w-10/12 mx-auto">
-                <img class="carta " src="assets/img/logo.png" alt="logo">
-                <img class="opcion size-full object-cover mx-auto " src="#" alt="">
+                <img class="carta" src="assets/img/logo.png" alt="logo">
+                <img class="opcion size-full object-cover mx-auto hidden" src="#" alt="">
               </div>
               <!--2-->
               <div class="h-40 bg-azulOscuro rounded flex items-center justify-center shadow-inner lg:h-64 lg:w-10/12 mx-auto">
