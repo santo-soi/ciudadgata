@@ -56,9 +56,140 @@
             </li>
           </ul>             
     </nav>
+    <main>
+      <div class="flex flex-col text-azulOscuro items-center box-border m-5 lg:m-5">
+        <h1 id="titulo" class="text-4xl text-center uppercase font-rubikO font-bold my-10 lg:text-6xl">Jugar como un Gato</h1>
+        
+        <!-- Estado inicial -->
+        <section id="intro" class="w-full font-rubikE text-center my-10 p-6 bg-beige border-2 border-azulOscuro rounded shadow-lg lg:w-3/4 hidden">
+          <p class="text-xl font-medium mb-4">
+            ¿Estás listo para poner a prueba cuánto sabés de <span class="font-bold">Ciudad Gata</span>?<br><br>
+             Nuestras remeras no solo son un ícono del rock y el arte urbano, sino también un desafío. <br><br>
+            <strong>Ahora es tu momento de brillar:</strong><i><br>
+            buscá entre los diseños de la marca y encontrá el modelo correcto en este emocionante juego de coincidencias.</i>
+          </p>
+          <h2 class="text-2xl w-full font-bold capitalize my-5">¿Cómo jugar?</h2>
+          <ol class="list-decimal list-inside text-lg font-rubikE text-azulOscuro leading-7 my-5 lg:px-32 ">
+            <li class="my-5">En cada ronda, se te va a indicar un diseño de remera específico a encontrar.<br>
+              (<a class="uppercase font-medium hover:underline" href="clasico/modelo-bocanada.html">Bocanada</a>, 
+              <a class="uppercase font-medium hover:underline" href="clasico/modelo-punkito.html">Punkito</a>, 
+              <a class="uppercase font-medium hover:underline" href="nuevo/modelo-abarajame/index.html">Abarajame</a>, o
+              <a class="uppercase font-medium hover:underline" href="nuevo/modelo-tubanda/index.html">Tu banda</a>).</li>
+            <li class="my-5">Busca en la grilla la remera que coincida con el modelo indicado. <br> Si acertás, sumás <span class="font-bold">1 punto</span>. <br> Si te equivocás, o no respondes a tiempo, <strong> no sumas nada.</strong></li>
+            <li class="my-5">Cuando acumulés <span class="font-bold">3 puntos</span>, ¡la jugabilidad cambia! <br>
+              <ul class="list-disc text-start w-3/4 relative left-10 lg:w-1/2 lg:left-1/4  pt-5">
+               <li>En algunas rondas vas a poder seleccionar <span class="font-bold">dos imágenes</span>.</li>
+               <li>Esto te dará la oportunidad de ganar más puntos.</li>
+               <li>No se avisará cuando, vas a tener que estar atentx.</li>
+               <li>En estos casos, si seleccionas una sola (de las dos imagenes del modelo a encontrar disponibles en la grilla),
+                 es lo mismo que si te equivocaras, o no respondieras a tiempo: <strong>no sumas nada</strong>.</li>
+              </ul>
+            </li>
+            <li class="my-5">El juego termina cuando alcances los <strong>10 puntos</strong>,<br> o <strong>no sumes puntos en 3 rondas</strong>. <br> ¡Divertite y pasá a formar parte de Ciudad Gata!</li>
+          </ol>
+          <button id="btn-iniciar" class=" px-6 py-3 text-lg font-bold text-beige bg-azulOscuro rounded hover:bg-opacity-90 shadow-md transition-all duration-200">
+            Jugá como un gato
+          </button>
+        </section>
+        
+        <!-- Juego -->
+        <section id="juego" class="w-full box-border flex flex-wrap justify-between my-10">
+          <p id="frasemobile" class="w-full p-2 text-2xl text-center font-medium italic lg:hidden">Frase inicial o generada</p>
+          <!-- Botón para reiniciar el juego -->
+          <button
+            id="btn-reiniciar"
+            class="hidden mt-6 px-6 py-3 mx-auto my-5 text-lg font-bold text-beige bg-azulOscuro rounded hover:bg-opacity-90 shadow-md transition-all duration-200">
+            Reiniciar
+          </button>
+    
+          <!-- Bloque de la frase y contadores en mobile-->
+          <div id="bloque-frase" class="w-full text-center bg-beige border-2 border-azulOscuro p-4 rounded shadow-lg font-rubikE lg:border-0">
+            <p id="frase" class="hidden text-2xl lg:text-3xl font-medium italic lg:inline-block">Frase inicial o generada</p>
+            <div class="modelo flex text-center mb-4 lg:hidden">
+              <h3 class="text-xl font-bold mb-2">Encontrá el modelo:</h3>
+              <p id="modelo-texto" class="text-lg font-medium">Texto o imagen del modelo</p>
+            </div>
+            <div class="contadores text-center lg:hidden">
+              <p class="puntaje text-xl">Puntos: 0</p>
+              <p class="temporizador text-2xl font-bold">-</p>          
+            </div>
+            
+          </div>
+          
+          <!-- Bloque de la grilla -->
+          <div id="bloque-grilla" class="w-full bg-beige border-2 border-azulOscuro p-1 rounded shadow-lg lg:w-7/12 lg:p-4">
+            <div class="grid grid-cols-3 my-2 gap-2 justify-center lg:grid-cols-3 lg:my-0 lg:gap-4">
+              <!-- Aquí se generarán las cartas dinámicamente con JavaScript -->
+               <!--1-->
+              <div class="h-40 bg-azulOscuro rounded flex items-center justify-center shadow-inner lg:h-64 lg:w-10/12 mx-auto">
+                <img class="carta " src="assets/img/logo.png" alt="logo">
+                <img class="opcion size-full object-cover mx-auto " src="#" alt="">
+              </div>
+              <!--2-->
+              <div class="h-40 bg-azulOscuro rounded flex items-center justify-center shadow-inner lg:h-64 lg:w-10/12 mx-auto">
+                <img class="carta" src="assets/img/logo.png" alt="logo">
+                <img class="opcion size-full object-cover mx-auto hidden" src="#" alt="">
+              </div>
+              <!--3-->
+              <div class="h-40 bg-azulOscuro rounded flex items-center justify-center shadow-inner lg:h-64 lg:w-10/12 mx-auto">
+                <img class="carta" src="assets/img/logo.png" alt="logo">
+                <img class="opcion size-full object-cover mx-auto hidden" src="#" alt="">
+              </div>
+              <!--4-->
+              <div class="h-40 bg-azulOscuro rounded flex items-center justify-center shadow-inner lg:h-64 lg:w-10/12 mx-auto">
+                <img class="carta" src="assets/img/logo.png" alt="logo">
+                <img class="opcion size-full object-cover mx-auto hidden" src="#" alt="">
+              </div>
+              <!--5-->
+              <div class="h-40 bg-azulOscuro rounded flex items-center justify-center shadow-inner lg:h-64 lg:w-10/12 mx-auto">
+                <img class="carta" src="assets/img/logo.png" alt="logo">
+                <img class="opcion size-full object-cover mx-auto hidden" src="#" alt="">
+              </div>
+              <!--6-->
+              <div class="h-40 bg-azulOscuro rounded flex items-center justify-center shadow-inner lg:h-64 lg:w-10/12 mx-auto">
+                <img class="carta" src="assets/img/logo.png" alt="logo">
+                <img class="opcion size-full object-cover mx-auto hidden" src="#" alt="">
+              </div>
+              <!--7-->
+              <div class="h-40 bg-azulOscuro rounded flex items-center justify-center shadow-inner lg:h-64 lg:w-10/12 mx-auto">
+                <img class="carta" src="assets/img/logo.png" alt="logo">
+                <img class="opcion size-full object-cover mx-auto hidden" src="#" alt="">
+              </div>
+              <!--8-->
+              <div class="h-40 bg-azulOscuro rounded flex items-center justify-center shadow-inner lg:h-64 lg:w-10/12 mx-auto">
+                <img class="carta" src="assets/img/logo.png" alt="logo">
+                <img class="opcion size-full object-cover mx-auto hidden" src="#" alt="">
+              </div>
+              <!--9-->
+              <div class="h-40 bg-azulOscuro rounded flex items-center justify-center shadow-inner lg:h-64 lg:w-10/12 mx-auto">
+                <img class="carta" src="assets/img/logo.png" alt="logo">
+                <img class="opcion size-full object-cover mx-auto hidden" src="#" alt="">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bloque de contadores y modelo a encontrar desktop-->
+          <div id="bloque-info" class="hidden w-5/12 flex-col border-2 border-azulOscuro bg-beige bg-opacity-90 p-4 rounded shadow-lg lg:flex">
+            <!-- Modelo a encontrar -->
+            <div class="modelo text-center mb-4 mx-auto">
+              <h3 class="text-lg font-bold mb-2 lg:text-2xl">Encontrá el modelo:</h3>
+              <img id="modelo-imagen" src="assets/img/juego/portadas/portada-punkito.png" alt="">
+            </div>
+            
+            <!-- Contadores -->
+            <div class="contadores text-center">
+              <p class="temporizador text-2xl font-bold">-</p>
+              <p class="puntaje text-xl lg:text-2xl">Puntos: 0</p>
+            </div>
+          </div>
+          
+        </section>
+      </div>
+    </main>
+    
     
    
-    <footer class="w-full h-96 flex flex-col items-center justify-between py-4 my-5 lg:h-full lg:flex-row lg:justify-around lg:py-2 bg-azulOscuro bg-opacity-80 text-center text-beige">
+    <footer class="w-full h-96 flex flex-col items-center justify-between py-4 lg:h-full lg:flex-row lg:justify-around lg:py-2 bg-azulOscuro bg-opacity-80 text-center text-beige">
         <div class="w-1/3 flex justify-center lg:items-end lg:h-60 lg:order-2"><img src="assets/img/logo.png" alt="logo"></div>
         <section class="flex justify-around box-border w-1/3  lg:h-60 lg:items-start lg:py-10 lg:justify-center ">
          <div class="lg:h-1/4 lg:w-1/4 xl:w-1/6 xl:h-1/6"><a href="https://www.tiktok.com/@ciudadgata_" target="_blank"><img class="lg:w-10/12"  src="assets/img/tik-tok.png" alt="tik-tok"></a></div>
@@ -71,6 +202,7 @@
       </footer>
   </div>
  <script src="js/funcionalidades-base.js"></script>
+ <script src="js/juego.js"></script>
 
  
 </body>

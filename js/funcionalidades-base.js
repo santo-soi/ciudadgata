@@ -11,6 +11,8 @@ let links = document.querySelectorAll('#desplegable a');
 // Itera por cada enlace y añade la clase 'hover:underline'
 links.forEach(link => {
   link.classList.add('hover:underline');
+  link.classList.add('active:bg-beige');
+  link.classList.add('active:text-azulOscuro');
 });
 
 //despliega el menu
