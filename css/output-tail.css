@@ -4632,6 +4632,10 @@ textarea:focus-visible{
   bottom: 100%;
 }
 
+.left-10{
+  left: 2.5rem;
+}
+
 .left-4{
   left: 1rem;
 }
@@ -4662,26 +4666,6 @@ textarea:focus-visible{
 
 .top-full{
   top: 100%;
-}
-
-.left-40{
-  left: 10rem;
-}
-
-.left-60{
-  left: 15rem;
-}
-
-.left-72{
-  left: 18rem;
-}
-
-.left-20{
-  left: 5rem;
-}
-
-.left-10{
-  left: 2.5rem;
 }
 
 .z-0{
@@ -4729,6 +4713,11 @@ textarea:focus-visible{
   margin-bottom: 4rem;
 }
 
+.my-2{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .my-2\.5{
   margin-top: 0.625rem;
   margin-bottom: 0.625rem;
@@ -4747,11 +4736,6 @@ textarea:focus-visible{
 .my-auto{
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.my-2{
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
 .mb-0\.5{
@@ -4774,6 +4758,10 @@ textarea:focus-visible{
   margin-bottom: 5rem;
 }
 
+.mb-4{
+  margin-bottom: 1rem;
+}
+
 .mr-2{
   margin-right: 0.5rem;
 }
@@ -4792,22 +4780,6 @@ textarea:focus-visible{
 
 .mt-6{
   margin-top: 1.5rem;
-}
-
-.mb-4{
-  margin-bottom: 1rem;
-}
-
-.mb-6{
-  margin-bottom: 1.5rem;
-}
-
-.ml-10{
-  margin-left: 2.5rem;
-}
-
-.ml-32{
-  margin-left: 8rem;
 }
 
 .box-border{
@@ -4883,6 +4855,10 @@ textarea:focus-visible{
   height: 0.5rem;
 }
 
+.h-40{
+  height: 10rem;
+}
+
 .h-6{
   height: 1.5rem;
 }
@@ -4911,18 +4887,6 @@ textarea:focus-visible{
   height: 100vh;
 }
 
-.h-32{
-  height: 8rem;
-}
-
-.h-56{
-  height: 14rem;
-}
-
-.h-40{
-  height: 10rem;
-}
-
 .max-h-36{
   max-height: 9rem;
 }
@@ -4939,6 +4903,10 @@ textarea:focus-visible{
   width: 75%;
 }
 
+.w-5\/12{
+  width: 41.666667%;
+}
+
 .w-6{
   width: 1.5rem;
 }
@@ -4951,20 +4919,8 @@ textarea:focus-visible{
   width: 100%;
 }
 
-.w-6\/12{
-  width: 50%;
-}
-
-.w-5\/12{
-  width: 41.666667%;
-}
-
 .max-w-full{
   max-width: 100%;
-}
-
-.max-w-xl{
-  max-width: 36rem;
 }
 
 .flex-shrink-0{
@@ -5036,10 +4992,6 @@ textarea:focus-visible{
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.grid-cols-2{
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 .flex-col{
   flex-direction: column;
 }
@@ -5080,14 +5032,6 @@ textarea:focus-visible{
   gap: 0.5rem;
 }
 
-.gap-4{
-  gap: 1rem;
-}
-
-.gap-3{
-  gap: 0.75rem;
-}
-
 .gap-x-2{
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
@@ -5102,10 +5046,6 @@ textarea:focus-visible{
   --tw-space-x-reverse: 0;
   margin-right: calc(0px * var(--tw-space-x-reverse));
   margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.self-center{
-  align-self: center;
 }
 
 .overflow-x-auto{
@@ -5232,21 +5172,6 @@ textarea:focus-visible{
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-blue-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
-}
-
-.bg-gray-100{
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
-}
-
-.bg-gray-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
-}
-
 .bg-opacity-0{
   --tw-bg-opacity: 0;
 }
@@ -5274,11 +5199,6 @@ textarea:focus-visible{
 .object-cover{
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.object-fill{
-  -o-object-fit: fill;
-     object-fit: fill;
 }
 
 .p-0\.5{
@@ -5309,12 +5229,12 @@ textarea:focus-visible{
   padding: 1.25rem;
 }
 
-.p-8{
-  padding: 2rem;
-}
-
 .p-6{
   padding: 1.5rem;
+}
+
+.p-8{
+  padding: 2rem;
 }
 
 .px-2{
@@ -5337,6 +5257,11 @@ textarea:focus-visible{
   padding-right: 1.25rem;
 }
 
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .py-0\.5{
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
@@ -5357,6 +5282,11 @@ textarea:focus-visible{
   padding-bottom: 0.625rem;
 }
 
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .py-4{
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -5365,31 +5295,6 @@ textarea:focus-visible{
 .py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.px-6{
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.py-3{
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
-.px-10{
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-.px-20{
-  padding-left: 5rem;
-  padding-right: 5rem;
-}
-
-.px-32{
-  padding-left: 8rem;
-  padding-right: 8rem;
 }
 
 .pl-6{
@@ -5410,10 +5315,6 @@ textarea:focus-visible{
 
 .pt-5{
   padding-top: 1.25rem;
-}
-
-.text-left{
-  text-align: left;
 }
 
 .text-center{
@@ -5611,15 +5512,15 @@ textarea:focus-visible{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-lg{
-  --tw-shadow: 0 10px 15px -2px var(--fallback-bs,oklch(var(--bs)/0.34));
-  --tw-shadow-colored: 0 10px 15px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .shadow-inner{
   --tw-shadow: inset 0 2px 4px 0 var(--fallback-bs,oklch(var(--bs)/0.26));
   --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-lg{
+  --tw-shadow: 0 10px 15px -2px var(--fallback-bs,oklch(var(--bs)/0.34));
+  --tw-shadow-colored: 0 10px 15px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -5627,17 +5528,6 @@ textarea:focus-visible{
   --tw-shadow: 0 4px 6px -1px var(--fallback-bs,oklch(var(--bs)/0.2));
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-none{
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-transparent{
-  --tw-shadow-color: transparent;
-  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .blur{
@@ -5679,6 +5569,10 @@ textarea:focus-visible{
   transition-duration: 1000ms;
 }
 
+.duration-200{
+  transition-duration: 200ms;
+}
+
 .duration-300{
   transition-duration: 300ms;
 }
@@ -5689,10 +5583,6 @@ textarea:focus-visible{
 
 .duration-700{
   transition-duration: 700ms;
-}
-
-.duration-200{
-  transition-duration: 200ms;
 }
 
 .ease-in-out{
@@ -5887,32 +5777,12 @@ textarea:focus-visible{
 }
 
 @media (min-width: 1024px){
-  .lg\:left-5{
-    left: 1.25rem;
-  }
-
-  .lg\:left-72{
-    left: 18rem;
-  }
-
-  .lg\:left-60{
-    left: 15rem;
-  }
-
-  .lg\:left-56{
-    left: 14rem;
-  }
-
-  .lg\:left-1\/2{
-    left: 50%;
-  }
-
-  .lg\:left-3\/4{
-    left: 75%;
-  }
-
   .lg\:left-1\/4{
     left: 25%;
+  }
+
+  .lg\:left-5{
+    left: 1.25rem;
   }
 
   .lg\:order-2{
@@ -6034,6 +5904,10 @@ textarea:focus-visible{
     height: 15rem;
   }
 
+  .lg\:h-64{
+    height: 16rem;
+  }
+
   .lg\:h-80{
     height: 20rem;
   }
@@ -6068,14 +5942,6 @@ textarea:focus-visible{
 
   .lg\:h-full{
     height: 100%;
-  }
-
-  .lg\:h-52{
-    height: 13rem;
-  }
-
-  .lg\:h-64{
-    height: 16rem;
   }
 
   .lg\:w-1\/2{
@@ -6114,16 +5980,12 @@ textarea:focus-visible{
     width: 60%;
   }
 
-  .lg\:w-auto{
-    width: auto;
-  }
-
   .lg\:w-7\/12{
     width: 58.333333%;
   }
 
-  .lg\:grid-cols-4{
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .lg\:w-auto{
+    width: auto;
   }
 
   .lg\:grid-cols-3{
@@ -6184,20 +6046,16 @@ textarea:focus-visible{
     padding: 2.5rem;
   }
 
+  .lg\:p-4{
+    padding: 1rem;
+  }
+
   .lg\:p-5{
     padding: 1.25rem;
   }
 
   .lg\:p-8{
     padding: 2rem;
-  }
-
-  .lg\:p-2{
-    padding: 0.5rem;
-  }
-
-  .lg\:p-4{
-    padding: 1rem;
   }
 
   .lg\:px-10{
@@ -6215,6 +6073,11 @@ textarea:focus-visible{
     padding-right: 7rem;
   }
 
+  .lg\:px-32{
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
   .lg\:py-0{
     padding-top: 0px;
     padding-bottom: 0px;
@@ -6228,11 +6091,6 @@ textarea:focus-visible{
   .lg\:py-2{
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-  }
-
-  .lg\:px-32{
-    padding-left: 8rem;
-    padding-right: 8rem;
   }
 
   .lg\:pb-20{

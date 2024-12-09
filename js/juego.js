@@ -1,6 +1,3 @@
-// Quedó en proceso! Subiré las actualizaciones pendientes a github. 
-
-
 // bloque de intro
 const intro = document.querySelector('#intro');
 const iniciaJuego = document.querySelector('#btn-iniciar');
@@ -8,7 +5,13 @@ const iniciaJuego = document.querySelector('#btn-iniciar');
 // bloques del juego
 const juego = document.querySelector('#juego'); //principal
 const frases = document.querySelectorAll('.frase');
-
+const reinicio = document.querySelector('#btn-reiniciar');
+//desktop
+const bloqueInfoDesktop =document.querySelector('#bloque-info');
+//mobile
+const bloqueInfoMobile = document.querySelector('#bloque-frase');
+//grilla
+const bloqueGrilla = document.querySelector('#bloque-grilla');
 
 // contadores
 const tiempo = document.querySelectorAll('.temporizador');
@@ -16,7 +19,8 @@ const puntaje = document.querySelectorAll('.puntaje');
 
 
 // Elementos donde se muestran las imágenes/info de los modelos
-const cartas = document.querySelectorAll('.cartas');
+const cartas = document.querySelectorAll('.carta');
+const mostrarBotonImagenes = document.querySelectorAll('.boton-opcion');
 const mostrarImagenes = document.querySelectorAll('.opcion');
 const mostrarModelo = document.querySelector('#modelo-imagen');
 const mostrarModeloMobile = document.querySelector('#modelo-texto');
@@ -29,7 +33,7 @@ let abarajame = [
     { src: 'assets/img/juego/imagenes/abarajame-cuatro.jpg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
     { src: 'assets/img/juego/imagenes/abarajame-cinco.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
     { src: 'assets/img/juego/imagenes/abarajame-seis.jpg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
-    { src: 'assets/img/juego/imagenes/abarajame-siete.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
+    { src: 'assets/img/juego/imagenes/abarajame-siete.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' }
   ];
   
   let tuBanda = [
@@ -39,7 +43,7 @@ let abarajame = [
     { src: 'assets/img/juego/imagenes/tubanda-cuatro.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
     { src: 'assets/img/juego/imagenes/tubanda-cinco.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
     { src: 'assets/img/juego/imagenes/tubanda-seis.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
-    { src: 'assets/img/juego/imagenes/tubanda-siete.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
+    { src: 'assets/img/juego/imagenes/tubanda-siete.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' }
   ];
   
   let punkito = [
@@ -49,7 +53,7 @@ let abarajame = [
     { src: 'assets/img/juego/imagenes/punkito-cuatro.jpg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
     { src: 'assets/img/juego/imagenes/punkito-cinco.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
     { src: 'assets/img/juego/imagenes/punkito-seis.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
-    { src: 'assets/img/juego/imagenes/punkito-siete.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
+    { src: 'assets/img/juego/imagenes/punkito-siete.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' }
   ];
   
   let bocanada = [
@@ -59,21 +63,29 @@ let abarajame = [
     { src: 'assets/img/juego/imagenes/bocanada-cuatro.jpg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
     { src: 'assets/img/juego/imagenes/bocanada-cinco.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
     { src: 'assets/img/juego/imagenes/bocanada-seis.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
-    { src: 'assets/img/juego/imagenes/bocanada-siete.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' },
+    { src: 'assets/img/juego/imagenes/bocanada-siete.jpeg', alt: 'Chicx rockerx usando remera Ciudad Gata' }
   ];
 
 // Imágenes para mostrar en "Encontrá el modelo:"
   let modelos = [
-    { src: 'assets/img/juego/portadas/portada-bocanada.png', alt: '"Bocanada" dibujado manualmente', nombre: 'Bocanada' },
-    { src: 'assets/img/juego/portadas/portada-punkito.png', alt: '"Punkito" dibujado manualmente', nombre: 'Punkito' },
-    { src: 'assets/img/juego/portadas/portada-abarajame.png', alt: '"Abarajame" dibujado manualmente', nombre: 'Abarajame' },
-    { src: 'assets/img/juego/portadas/portada-tubanda.png', alt: '"Tu Banda" dibujado manualmente', nombre: 'Tu Banda' },
+    { src: 'assets/img/juego/portadas/portada-bocanada.png', alt: '"Bocanada" dibujado manualmente', nombre: 'Bocanada', array: bocanada},
+    { src: 'assets/img/juego/portadas/portada-punkito.png', alt: '"Punkito" dibujado manualmente', nombre: 'Punkito', array: punkito },
+    { src: 'assets/img/juego/portadas/portada-abarajame.png', alt: '"Abarajame" dibujado manualmente', nombre: 'Abarajame', array: abarajame},
+    { src: 'assets/img/juego/portadas/portada-tubanda.png', alt: '"Tu Banda" dibujado manualmente', nombre: 'Tu Banda', array: tuBanda}
   ];
   
 // cuando se clickea el botón inicia el juego
   iniciaJuego.addEventListener('click', () =>{
     iniciarJuego();
   })
+
+  
+  // Variables para el estado del juego
+  let puntos = 0;
+  let rondasGanadas = 0;
+  let rondasJugadas = 0;
+  let rondasFallidas = 0;
+  let seleccionMultiple = false;
 
   function iniciarJuego() {
     
@@ -97,120 +109,303 @@ let abarajame = [
     
   
     // Iniciar temporizador regresivo
-    let tiempoRestante = 4;
+    let tiempoRestante = 3;
     tiempo.forEach(temporizador => {
-        temporizador.innerText = String(tiempoRestante);
+        temporizador.innerText = `Tiempo restante: ${tiempoRestante} segundos`;
     });
    
     const contador = setInterval(() => {
-      tiempoRestante--;
-      tiempo.forEach(temporizador => {
-        temporizador.innerText = String(tiempoRestante);
-    });
-  
-      if (tiempoRestante < 0) {
-        clearInterval(contador);
-        // Continuar con el siguiente paso del juego aquí
-        console.log('El temporizador ha terminado, listo para la siguiente fase.');
-      }
+    if (tiempoRestante <= 0) {
+            clearInterval(contador);
+            iniciarRondaJuego();
+        } else{
+            tiempoRestante--;
+            tiempo.forEach(temporizador => {
+                temporizador.innerText = `Tiempo restante: ${tiempoRestante} segundos`;
+            });
+        }
     }, 1000);
-  }
+  
+}
 
 
 
   function iniciarRondaJuego() {
-    // 1. Sortea modelos
-    const modelos = ['Punkito', 'Bocanada', 'Abarajame', 'Tu Banda'];
-    let modeloSorteado = modelos[Math.floor(Math.random() * modelos.length)]; // Elegir modelo objetivo al azar
+    // 1.Sortea modelos
+    const modelosPosibles = ['Punkito', 'Bocanada', 'Abarajame', 'Tu Banda'];
+    let modeloSorteado = modelosPosibles[Math.floor(Math.random() * modelosPosibles.length)]; // Elegir modelo objetivo al azar 
+    let posicionVerdadera = Math.floor(Math.random() * mostrarImagenes.length); //Defino posición de la grilla donde se va a mostrar la imagen verdadera
+    console.log(`posición verdadera:${posicionVerdadera}`);
+   
     
-    const esMobile = window.innerWidth <= 768; // Definir si es mobile
+    let modeloSeleccionado;
+    let modelosRestantes = [];   // Hago un array nuevo de los modelos, excluyedno al sorteado
+    for (let i = 0; i < modelos.length; i++) {  // Busco el modelo sorteado en el array modelos
+          if (modelos[i].nombre == modeloSorteado) {
+              modeloSeleccionado = modelos[i];
+          } else{ 
+            modelosRestantes.push(modelos[i]);
+          }
+      }
+     
+    
 
-    // Asignar la imagen o texto del modelo sorteado
-    if (esMobile) {
-        modeloTexto.innerText = modeloSorteado;
-    } else {
-        modelos.forEach(modelo => {
-            if(modelo.nombre == modeloSorteado){
-                mostrarModelo.src = `${src}`; // Cambiar ruta según dónde guardes las imágenes
-                mostrarModelo.alt = `${alt}`; // Asignarle el alt correspondiente
-            }
-        });
+    if (!modeloSeleccionado) {
+        console.error(`No se encontró el modelo: ${modeloSorteado}`);
+        return; // Detener ejecución si no se encuentra el modelo
+    } 
         
+    
+    // Defino cuál va ser la imagen del modelo a encontrar en la grilla
+    let imagenAleatoriaVerdadera = modeloSeleccionado.array[Math.floor(Math.random() * modeloSeleccionado.array.length)];
+
+    // 2.Ya definido lo sorteado comienzo a mostrar todos los elementos en sus respectivos bloques
+
+    mostrarModeloMobile.innerText = modeloSeleccionado.nombre; //muestra el nombre del modelo a encontrar en mobile
+    mostrarModelo.src = modeloSeleccionado.src; // muestra imagen portada del modelo a encontrar en desktop
+    mostrarModelo.alt = modeloSeleccionado.alt; // muestra la descripción de la imagen portada del modelo a encontrar en desktop          
+    
+    
+    for(let i = 0; i < mostrarImagenes.length; i ++){  //recorro las posiciones de la grilla
+        cartas[i].classList.add('hidden');
+        if(i !== posicionVerdadera){ //si la posición no es la definida como verdadera, se le coloca una imagen random del resto de modelos
+            let indiceModeloImagenRandom = Math.floor(Math.random() * modelosRestantes.length);
+            let imagenRandom = modelosRestantes[indiceModeloImagenRandom].array[Math.floor(Math.random() * modelosRestantes[indiceModeloImagenRandom].array.length)];
+          //  let imagenRandom = modelosRestantes[indiceModeloImagenRandom].array[Math.floor(Math.random() * array.length)];
+            mostrarImagenes[i].src = imagenRandom.src;
+            mostrarImagenes[i].alt = imagenRandom.alt;
+        } else{                                     // si no, se coloca la imagen del modelo sorteado 
+            mostrarImagenes[posicionVerdadera].src = imagenAleatoriaVerdadera.src; //mostrar imagen del modelo en la grilla
+            mostrarImagenes[posicionVerdadera].alt = imagenAleatoriaVerdadera.alt; //mostrar descripición de la imagen del modelo en la grilla
+        }
+        mostrarBotonImagenes[i].classList.remove('hidden');
+        mostrarImagenes[i].classList.remove('hidden');
     }
 
-    // 2. Asignar fotos a los bloques de la grilla
-    mostrarImagenes.forEach(imagen => {
-        const imagenVerdadera = mostrarImagenes[Math.floor(Math.random() * modelos.length)];
-        
-        imagen.style.backgroundImage = `url(imagenes/${modeloAleatorio}.jpg)`;
-        imagen.dataset.modelo = modeloAleatorio; // Guardar el modelo asociado
+    //Actualizo la frase para guiar al usuario
+    frases.forEach(frase => {
+        frase.innerText = '¡Busca la remera solicitada!';
     });
 
-    // Seleccionar un bloque al azar para que contenga el modelo objetivo
-    const indiceObjetivo = Math.floor(Math.random() * bloques.length);
-    const bloqueObjetivo = bloques[indiceObjetivo];
-    bloqueObjetivo.style.backgroundImage = `url(imagenes/${modeloGrilla}.jpg)`;
-    bloqueObjetivo.dataset.modelo = modeloGrilla;
-
-    // 3. Activar el temporizador de 5 segundos
-    let tiempoRestante = 5;
-    const temporizador = setInterval(() => {
-        actualizarTemporizador(tiempoRestante); // Función para mostrar el tiempo en pantalla
-        tiempoRestante--;
-
-        if (tiempoRestante < 0) {
-            clearInterval(temporizador);
-            terminarRonda(); // Terminar ronda si no se selecciona nada
+     // 3. Activo el temporizador de 5 segundos
+     let tiempoRestante = 5;
+     const temporizador = setInterval(() => {
+         if (tiempoRestante <= 0) {
+             clearInterval(temporizador);
+             terminarRondaXtiempo(); // Terminar ronda si no se selecciona nada
+         } else{
+         tiempo.forEach(temporizador => {
+            temporizador.innerText = `Tiempo restante: ${tiempoRestante} segundos`;
+        }); // Función para mostrar el tiempo en pantalla
+         tiempoRestante--;
         }
-    }, 1000);
+     }, 1000);
 
-    // 4. Manejar selección de bloques
-    bloques.forEach(bloque => {
-        bloque.addEventListener('click', () => {
+   
+        // 4. Manejar selección de bloques
+        mostrarImagenes.forEach((imagen, indice) => {
+        mostrarBotonImagenes[indice].addEventListener('click', () => {
             clearInterval(temporizador); // Detener el temporizador
-            manejarSeleccion(bloque, bloqueObjetivo); // Evaluar selección
+            manejarSeleccion(indice, posicionVerdadera); // Evaluar selección
         });
     });
+   
+
+  }
+  
+
+   
+
+  
 
     // Función para evaluar selección
     function manejarSeleccion(bloqueSeleccionado, bloqueObjetivo) {
         const esCorrecto = bloqueSeleccionado === bloqueObjetivo;
-        if (esCorrecto) {
-            console.log('¡Correcto! Encontraste el modelo objetivo.');
+        console.log('Se procesa la elección');
+        if (rondasGanadas > 3 && rondasJugadas % 2 == 0 && esCorrecto) {
+            console.log('está jugando por más puntos');
+            // Manejamos lógica para selección múltiple (dos bloques)
+            puntos += 2;
+            rondasGanadas++;
+            frases.forEach(frase => {
+                    frase.innerText = '¡Genial, estás en racha!';
+            });
         } else {
-            console.log('Incorrecto. Intenta de nuevo.');
+            // Manejamos lógica para selección simple (un bloque)
+            if (esCorrecto) {
+                puntos++;
+                rondasGanadas++;
+                frases.forEach(frase => {
+                    frase.innerText = '¡Genial, ganaste un punto!';
+                });
+            } else {
+                rondasFallidas++;
+                frases.forEach(frase => {
+                    frase.innerText = 'Uu, le pifiaste. O no llegaste con el tiempo';
+                });
+            }
+    
         }
-        bloquearInterfazPorUnSegundo(() => {
-            avanzarSiguientePaso();
-        });
+
+            puntaje.forEach(contador => {
+            contador.innerText = `Puntos: ${puntos}`;
+           });
+
+            rondasJugadas ++;
+
+            document.body.style.pointerEvents = 'none';
+            setTimeout(() => {
+                avanzarSiguientePaso();
+            }, 4000);
+        
     }
 
-    // Función para bloquear la interfaz
-    function bloquearInterfazPorUnSegundo(callback) {
-        document.body.style.pointerEvents = 'none'; // Bloquear clics
-        setTimeout(() => {
-            document.body.style.pointerEvents = 'auto'; // Restaurar clics
-            callback();
-        }, 1000);
-    }
 
     // Función para terminar la ronda sin selección
-    function terminarRonda() {
+    function terminarRondaXtiempo() {
         console.log('Tiempo agotado. Fin de la ronda.');
-        bloquearInterfazPorUnSegundo(() => {
-            avanzarSiguientePaso();
+      
+        rondasFallidas++;
+        rondasJugadas++;
+        frases.forEach(frase => {
+            frase.innerText = 'Uu, le pifiaste. O no llegaste con el tiempo';
         });
+
+        puntaje.forEach(contador => {
+            contador.innerText = `Puntos: ${puntos}`;
+        });
+        
+        document.body.style.pointerEvents = 'none';
+        setTimeout(() =>{
+            avanzarSiguientePaso();
+        },4000);
+          
+       
     }
 
-    // Función para actualizar temporizador en pantalla
-    function actualizarTemporizador(tiempo) {
-        const temporizadorElemento = document.querySelector('#temporizador'); // Ajustar ID según el HTML
-        temporizadorElemento.textContent = `Tiempo restante: ${tiempo}s`;
-    }
 
     // Función para avanzar al siguiente paso
     function avanzarSiguientePaso() {
-        console.log('Avanzando a la siguiente etapa...');
-        // Aquí iría la lógica para avanzar al siguiente paso del juego
+        document.body.style.pointerEvents = 'auto';
+        // Evaluar condiciones de fin del juego o avanzar a la siguiente ronda
+        if (rondasGanadas >= 10) {
+            console.log('ganó');
+            frases.forEach(frase => {
+                frase.innerText = 'Ganaste. ¡Gracias por jugar!';
+              });
+            finalizarJuego();
+            
+        } else if (rondasFallidas === 3) {
+            console.log('perdió')
+            frases.forEach(frase => {
+                frase.innerText = 'Perdiste. Será la próxima, gatx 😊';
+              });
+              finalizarJuego();
+         ;
+        } else{
+               mostrarImagenes.forEach((imagen, indice) => {
+               imagen.classList.add('hidden');
+               mostrarBotonImagenes[indice].classList.add('hidden');
+               imagen.src = ``;
+               imagen.alt = ``;
+               });
+               
+               cartas.forEach(carta => {
+                carta.classList.remove('hidden');
+               });
+               
+               frases.forEach(frase => {
+                frase.innerText = 'Preparate para jugar como un gato...';
+               });
+               
+               mostrarModeloMobile.innerText = '-'; 
+               mostrarModelo.src =`#`; 
+               mostrarModelo.alt = ``; 
+
+               let tiempoRestante = 3;
+               tiempo.forEach(temporizador => {
+                    temporizador.innerText = `Tiempo restante: ${tiempoRestante} segundos`;
+                });
+                
+                const contador = setInterval(() => {
+                    if (tiempoRestante <= 0) {
+                        clearInterval(contador);
+                        iniciarRondaJuego();
+                    } else {
+                        tiempoRestante--;
+                        tiempo.forEach(temporizador => {
+                            temporizador.innerText = `Tiempo restante: ${tiempoRestante} segundos`;
+                        });
+                    }
+                }, 1000);
+        }
+       
+        
+        
+        
     }
-}
+
+       
+    function finalizarJuego() {
+      //Reestablecimiento de valores
+      console.log('finalizó');
+      rondasGanadas = 0;
+      rondasFallidas = 0;
+      rondasJugadas = 0;
+      puntos = 0;
+
+    
+    //Reestablecimiento de puntos y tiempo mostrados
+      puntaje.forEach((contador,indice) => {
+        contador.innerText =` Puntos: ${puntos}`;
+        tiempo[indice] = `Tiempo restante: -`;
+      });
+
+      mostrarImagenes.forEach((imagen, indice) => {
+        imagen.classList.add('hidden');
+        mostrarBotonImagenes[indice].classList.add('hidden');
+        cartas[indice].classList.remove('hidden');
+        imagen.src = `#`;
+        imagen.alt = ``;
+      });
+
+      mostrarModeloMobile.innerText = '-'; 
+      mostrarModelo.src =`#`; 
+      mostrarModelo.alt = ``; 
+      
+
+      //oculto data desktop
+      bloqueInfoDesktop.classList.remove('lg:flex');
+
+      
+
+      //oculto data mobile
+      bloqueInfoMobile.classList.add('hidden');
+      
+      //oculto grilla
+      bloqueGrilla.classList.add('hidden');
+
+      //muestro botón para reiniciar el juego
+      reinicio.classList.remove('hidden');
+      
+      
+    }
+
+   
+    reinicio.addEventListener('click', () =>{
+        reinicio.classList.add('hidden');
+        intro.classList.remove('hidden');
+        iniciaJuego.classList.remove('hidden');
+        juego.classList.remove('flex');
+        juego.classList.add('hidden');
+
+     //dejo lista la data en desktop para ser mostrada en el próximo juego
+      bloqueInfoDesktop.classList.add('lg:flex');
+
+      //dejo lista la data en mobile para ser mostrada en el próximo juego
+      bloqueInfoMobile.classList.remove('hidden');
+
+      //dejo lista la grilla para ser mostrada en el próximo juego
+      bloqueGrilla.classList.remove('hidden');
+
+    });
